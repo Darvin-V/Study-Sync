@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StudySync AI — Intelligent Peer-Learning Platform</title>
+    <meta
+      name="description"
+      content="StudySync AI is an intelligent peer-learning platform where students discover compatible study partners, join topic-based learning rooms, collaborate, exchange notes, and receive personalized recommendations."
+    />
+    <meta name="theme-color" content="#863bff" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="StudySync" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      (function() {
+        try {
+          var savedTheme = localStorage.getItem('studysync_theme') || 'system';
+          var resolved = savedTheme;
+          if (savedTheme === 'system') {
+            resolved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', resolved);
+          document.documentElement.setAttribute('data-theme-setting', savedTheme);
+          if (resolved === 'dark') {
+            document.documentElement.classList.add('dark');
+          } else {
+            document.documentElement.classList.remove('dark');
+          }
+          var savedScale = localStorage.getItem('studysync_font_scaling') || '16px';
+          var px = 16;
+          if (savedScale === 'small' || savedScale === 'compact') px = 14;
+          else if (savedScale === 'large' || savedScale === 'comfortable') px = 18;
+          else if (savedScale === 'standard' || savedScale === 'default') px = 16;
+          else {
+            var match = String(savedScale).match(/^(\d+)/);
+            if (match) px = Math.min(24, Math.max(12, parseInt(match[1], 10)));
+          }
+          var pxStr = px + 'px';
+          document.documentElement.style.fontSize = pxStr;
+          document.documentElement.style.setProperty('--base-font-size', pxStr);
+          document.documentElement.style.setProperty('--app-font-size', pxStr);
+          document.documentElement.setAttribute('data-font-size', pxStr);
+          var cat = px <= 14 ? 'compact' : (px >= 18 ? 'comfortable' : 'standard');
+          document.documentElement.setAttribute('data-font-scale', cat);
+          var savedMotion = localStorage.getItem('studysync_reduced_motion') === 'true';
+          document.documentElement.setAttribute('data-reduced-motion', savedMotion ? 'true' : 'false');
+          var savedLang = localStorage.getItem('studysync_language') || 'en';
+          document.documentElement.setAttribute('lang', savedLang);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

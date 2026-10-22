@@ -1,0 +1,393 @@
+/**
+ * StudySync AI — Design System Tokens
+ * 
+ * Aesthetic Direction:
+ * - Refined charcoal-gray, soft neutral gray, and clean off-white design system.
+ * - Sidebar: charcoal #25272B.
+ * - Main application background: soft neutral gray #F3F4F2.
+ * - Cards and content surfaces: clean white #FFFFFF.
+ * - Primary text: near-black #202124.
+ * - Secondary text: muted gray #686D73.
+ * - Borders and dividers: subtle gray #DFE2E0.
+ * - Primary actions: charcoal #34373B with crisp white text.
+ * - Secondary accent: muted sage #747B73 for selected states, active indicators, and meaningful badges.
+ * - Restrained, natural, professional; no brown/terracotta, no blue/purple, no neon, no glowing effects.
+ */
+
+:root {
+  /* Clean Luminous Social Media Canvas & Crisp White Surfaces */
+  --color-bg-app: #F8FAFC;             /* crisp social canvas */
+  --color-bg-surface: #FFFFFF;         /* clean white cards and feed surfaces */
+  --color-bg-surface-elevated: #FFFFFF;/* elevated content surface */
+  --color-bg-subtle: #F1F5F9;          /* subtle neutral gray background */
+  --color-bg-muted: #E2E8F0;           /* muted gray tint */
+  --color-bg-hover: #F1F5F9;           /* neutral hover background */
+
+  /* Surface & Paper Colors */
+  --color-paper-card: #FFFFFF;
+  --color-paper-border: #E2E8F0;
+  --color-paper-inset: #F8FAFC;
+  --color-paper-kicker: #64748B;
+
+  /* Charcoal Sidebar & Dark Navigation (#25272B) */
+  --color-nav-bg: #25272B;             /* charcoal sidebar */
+  --color-nav-surface: #2E3136;        /* slightly elevated charcoal */
+  --color-nav-border: #35383D;         /* subtle charcoal divider */
+  --color-nav-text: #9EA3A9;           /* muted gray navigation text */
+  --color-nav-text-hover: #FFFFFF;     /* white hovered navigation text */
+  --color-nav-hover-bg: rgba(255, 255, 255, 0.08);
+  --color-nav-active-bg: #34373B;      /* active navigation charcoal */
+  --color-nav-active-text: #FFFFFF;
+
+  /* Typography / Ink Hierarchy — Modern Legible Social Contrast */
+  --color-text-primary: #0F172A;       /* sharp near-black primary text */
+  --color-text-secondary: #475569;     /* legible slate secondary text */
+  --color-text-muted: #64748B;         /* clean tertiary / helper text */
+  --color-text-inverse: #FFFFFF;
+
+  /* Borders & Dividers — Crisp 1px Social Borders */
+  --color-border-subtle: #F1F5F9;
+  --color-border-default: #E2E8F0;     /* crisp modern border & divider */
+  --color-border-strong: #CBD5E1;      /* stronger gray border */
+  --color-border-focus: #1E293B;       /* focus outline */
+
+  /* PRIMARY BRAND & MESSAGING: LinkedIn Blue #0A66C2 */
+  --color-primary: #0A66C2;
+  --color-primary-hover: #004182;
+  --color-primary-active: #09223B;
+  --color-primary-subtle: #EBF4FD;
+  --color-primary-border: #CBE2F8;
+  --color-primary-text: #0A66C2;
+
+  /* PRIMARY ACTIONS: Charcoal #25272B / #1E293B with White Text */
+  --color-accent: #1E293B;             /* charcoal primary actions */
+  --color-accent-hover: #0F172A;       /* darker hover */
+  --color-accent-active: #020617;      /* pressed state */
+  --color-accent-subtle: #F1F5F9;      /* subtle neutral tint */
+  --color-accent-border: #E2E8F0;      /* subtle gray accent border */
+  --color-accent-text: #0F172A;        /* dark charcoal text */
+
+  /* SECONDARY ACCENT: Muted Sage #747B73 (Used sparingly for selected states / status) */
+  --color-sage: #747B73;               /* muted sage secondary accent */
+  --color-sage-hover: #616860;
+  --color-sage-active: #4E544D;
+  --color-sage-subtle: #EDF0EC;
+  --color-sage-border: #D2D7D1;
+  --color-sage-text: #414740;
+
+  /* Grounded Muted Accents & Badges (restrained, no neon, no blue/purple) */
+  --color-forest: #4A564B;             /* muted deep sage / slate-forest */
+  --color-forest-subtle: #EDF1EC;
+  --color-forest-border: #CBD4CA;
+  --color-forest-text: #343E35;
+
+  --color-olive: #5B6458;              /* soft olive-charcoal */
+  --color-olive-subtle: #EFF2EE;
+  --color-olive-border: #D0D7CF;
+  --color-olive-text: #3D443B;
+
+  --color-burgundy: #4E5257;           /* neutral charcoal-slate */
+  --color-burgundy-subtle: #EFF0F2;
+  --color-burgundy-border: #D2D6DC;
+  --color-burgundy-text: #2E3238;
+
+  --color-amber: #6E746D;              /* subdued sage-gray indicator */
+  --color-amber-subtle: #EFF1EE;
+  --color-amber-border: #D4D9D3;
+  --color-amber-text: #484E47;
+
+  /* Status Indicators (Natural, Muted & Grounded) */
+  --color-success: #526051;
+  --color-success-bg: #EDF2EC;
+  --color-success-border: #CBD5CA;
+  --color-success-text: #364235;
+
+  --color-warning: #636A62;
+  --color-warning-bg: #EFF2EE;
+  --color-warning-border: #D1D8D0;
+  --color-warning-text: #3E453D;
+
+  --color-danger: #8C4040;             /* restrained muted brick for destructive actions */
+  --color-danger-bg: #F8EDED;
+  --color-danger-border: #E8C8C8;
+  --color-danger-text: #732E2E;
+
+  --color-info: #5B6458;
+  --color-info-bg: #EFF2EE;
+  --color-info-border: #D0D7CF;
+  --color-info-text: #3D443B;
+
+  /* Typography Hierarchy — Modern Social Platform Font Stack */
+  --font-serif: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', 'Noto Sans Tamil', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Nirmala UI', 'Latha', 'Tamil Sangam MN', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+}
+
+html[lang="ta"] {
+  --font-sans: 'Noto Sans Tamil', 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Nirmala UI', 'Latha', 'Tamil Sangam MN', Roboto, sans-serif;
+}
+
+:root {
+
+  /* Base Application Font Size Preference */
+  --app-font-size: 16px;
+
+  /* Typography Hierarchy — Scales predictably with --app-font-size */
+  --text-xs: calc(var(--app-font-size, 16px) * 0.8125);   /* ~13px at 16px base */
+  --text-sm: calc(var(--app-font-size, 16px) * 0.875);    /* ~14px at 16px base */
+  --text-base: var(--app-font-size, 16px);                 /* exactly 16px at 16px base */
+  --text-lg: calc(var(--app-font-size, 16px) * 1.125);    /* ~18px at 16px base */
+  --text-xl: calc(var(--app-font-size, 16px) * 1.25);     /* ~20px at 16px base */
+  --text-2xl: calc(var(--app-font-size, 16px) * 1.5);     /* ~24px at 16px base */
+  --text-3xl: calc(var(--app-font-size, 16px) * 1.875);   /* ~30px at 16px base */
+  --text-4xl: calc(var(--app-font-size, 16px) * 2.25);    /* ~36px at 16px base */
+
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.65;
+
+  /* Spacing Scale (Constant Layout Metrics, Independent of Font Size) */
+  --space-0-5: 2px;
+  --space-1: 4px;
+  --space-1-5: 6px;
+  --space-2: 8px;
+  --space-2-5: 10px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+
+  /* Geometry — Modern Social Media Curvature */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Shadows — Modern Depth & Layering */
+  --shadow-none: none;
+  --shadow-subtle: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.05), 0 1px 2px rgba(15, 23, 42, 0.02);
+  --shadow-card-hover: 0 8px 20px -4px rgba(15, 23, 42, 0.08), 0 2px 6px -1px rgba(15, 23, 42, 0.03);
+  --shadow-dropdown: 0 12px 28px -4px rgba(15, 23, 42, 0.12), 0 4px 10px -2px rgba(15, 23, 42, 0.05);
+  --shadow-modal: 0 24px 48px -12px rgba(15, 23, 42, 0.18), 0 8px 16px -4px rgba(15, 23, 42, 0.08);
+  --shadow-focus: 0 0 0 3px rgba(30, 41, 59, 0.20);
+
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Surface and Background Aliases */
+  --color-bg-card: var(--color-bg-surface);
+  --color-bg-base: var(--color-bg-app);
+  --color-bg-primary: var(--color-bg-surface);
+  --color-brand-primary: var(--color-primary);
+
+  /* Status Subtles & Badges Aliases */
+  --color-danger-subtle: var(--color-danger-bg);
+  --color-warning-subtle: var(--color-warning-bg);
+  --color-success-subtle: var(--color-success-bg);
+  --color-forest-bg: var(--color-forest-subtle);
+  --color-border-danger: var(--color-danger-border);
+  --color-text-danger: var(--color-danger-text);
+
+  /* Spacing & Typography Aliases */
+  --space-3-5: 14px;
+  --text-md: var(--text-base);
+  --font-extrabold: 800;
+  --color-charcoal: #25272B;
+
+  /* Shadow Aliases */
+  --shadow-sm: var(--shadow-subtle);
+  --shadow-md: var(--shadow-card);
+  --shadow-lg: var(--shadow-card-hover);
+
+  /* Shell Dimensions */
+  --sidebar-width: 250px;
+  --topbar-height: 62px;
+  --content-max-width: 1240px;
+}
+
+/* ==========================================================================
+   Dark Theme Design System Tokens (Phase 3)
+   Aesthetic: Refined Obsidian Slate, crisp contrast, glowing sage accents
+   ========================================================================== */
+[data-theme="dark"],
+:root.dark {
+  /* Luminous Slate Canvas & Elevating Surfaces */
+  --color-bg-app: #0B0F17;
+  --color-bg-surface: #151C28;
+  --color-bg-surface-elevated: #1C2636;
+  --color-bg-subtle: #192231;
+  --color-bg-muted: #243044;
+  --color-bg-hover: #1E293B;
+
+  /* Surface & Paper Colors */
+  --color-paper-card: #151C28;
+  --color-paper-border: #283548;
+  --color-paper-inset: #0F1622;
+  --color-paper-kicker: #94A3B8;
+
+  /* Charcoal Sidebar & Dark Navigation */
+  --color-nav-bg: #090D15;
+  --color-nav-surface: #121824;
+  --color-nav-border: #1E2736;
+  --color-nav-text: #94A3B8;
+  --color-nav-text-hover: #F8FAFC;
+  --color-nav-hover-bg: rgba(255, 255, 255, 0.07);
+  --color-nav-active-bg: #1E293B;
+  --color-nav-active-text: #FFFFFF;
+
+  /* Typography Hierarchy */
+  --color-text-primary: #F8FAFC;
+  --color-text-secondary: #CBD5E1;
+  --color-text-muted: #94A3B8;
+  --color-text-inverse: #0F172A;
+
+  /* Borders & Dividers */
+  --color-border-subtle: #1E2736;
+  --color-border-default: #283548;
+  --color-border-strong: #3B4B61;
+  --color-border-focus: #60A5FA;
+
+  /* Primary Brand & Messaging */
+  --color-primary: #3B82F6;
+  --color-primary-hover: #60A5FA;
+  --color-primary-active: #2563EB;
+  --color-primary-subtle: #172554;
+  --color-primary-border: #1E3A8A;
+  --color-primary-text: #93C5FD;
+
+  /* Primary Action */
+  --color-accent: #3B82F6;
+  --color-accent-hover: #60A5FA;
+  --color-accent-active: #2563EB;
+  --color-accent-subtle: #172554;
+  --color-accent-border: #1E3A8A;
+  --color-accent-text: #93C5FD;
+
+  /* Secondary Accents */
+  --color-sage: #8DA18C;
+  --color-sage-hover: #9FB29E;
+  --color-sage-active: #7A8E79;
+  --color-sage-subtle: #17241A;
+  --color-sage-border: #2B4230;
+  --color-sage-text: #C3D9C2;
+
+  --color-forest: #7C987A;
+  --color-forest-subtle: #162618;
+  --color-forest-border: #2E4731;
+  --color-forest-text: #CFDFC0;
+
+  --color-olive: #929E8E;
+  --color-olive-subtle: #1A241B;
+  --color-olive-border: #324334;
+  --color-olive-text: #D2DDD0;
+
+  --color-burgundy: #8B949E;
+  --color-burgundy-subtle: #1F242C;
+  --color-burgundy-border: #384252;
+  --color-burgundy-text: #D5DBE1;
+
+  --color-amber: #A4ACA2;
+  --color-amber-subtle: #202621;
+  --color-amber-border: #3E4B40;
+  --color-amber-text: #D8DFD7;
+
+  /* Status Indicators */
+  --color-success: #6EAF7B;
+  --color-success-bg: #14281A;
+  --color-success-border: #264A2F;
+  --color-success-text: #A8E2B2;
+
+  --color-warning: #D4A359;
+  --color-warning-bg: #2C2112;
+  --color-warning-border: #523D20;
+  --color-warning-text: #FAD390;
+
+  --color-danger: #E06C75;
+  --color-danger-bg: #2B1618;
+  --color-danger-border: #57252A;
+  --color-danger-text: #FF9B9B;
+
+  --color-info: #61AFEF;
+  --color-info-bg: #132438;
+  --color-info-border: #1E3F66;
+  --color-info-text: #9DD0FF;
+
+  /* Surface and Background Aliases */
+  --color-bg-card: var(--color-bg-surface);
+  --color-bg-base: var(--color-bg-app);
+  --color-bg-primary: var(--color-bg-surface);
+  --color-brand-primary: var(--color-primary);
+
+  /* Status Subtles & Badges Aliases */
+  --color-danger-subtle: var(--color-danger-bg);
+  --color-warning-subtle: var(--color-warning-bg);
+  --color-success-subtle: var(--color-success-bg);
+  --color-forest-bg: var(--color-forest-subtle);
+  --color-border-danger: var(--color-danger-border);
+  --color-text-danger: var(--color-danger-text);
+
+  /* Shadow Aliases */
+  --shadow-sm: var(--shadow-subtle);
+  --shadow-md: var(--shadow-card);
+  --shadow-lg: var(--shadow-card-hover);
+
+  /* Shadows */
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  --shadow-card-hover: 0 8px 20px -4px rgba(0, 0, 0, 0.6), 0 2px 6px -1px rgba(0, 0, 0, 0.4);
+  --shadow-dropdown: 0 12px 28px -4px rgba(0, 0, 0, 0.7), 0 4px 10px -2px rgba(0, 0, 0, 0.5);
+  --shadow-modal: 0 24px 48px -12px rgba(0, 0, 0, 0.8), 0 8px 16px -4px rgba(0, 0, 0, 0.6);
+  --shadow-focus: 0 0 0 3px rgba(96, 165, 250, 0.35);
+}
+
+/* ==========================================================================
+   Font Scaling Variables — Continuous (12px - 24px) & Preset Fallbacks
+   ========================================================================== */
+:not([data-font-size])[data-font-scale="compact"],
+:not([data-font-size])[data-font-scale="small"] {
+  --app-font-size: 14px;
+}
+
+:not([data-font-size])[data-font-scale="standard"],
+:not([data-font-size])[data-font-scale="default"] {
+  --app-font-size: 16px;
+}
+
+:not([data-font-size])[data-font-scale="comfortable"],
+:not([data-font-size])[data-font-scale="large"] {
+  --app-font-size: 18px;
+}
+
+/* ==========================================================================
+   Reduced Motion Accessibility (Phase 3)
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+[data-reduced-motion="true"] *,
+[data-reduced-motion="true"] *::before,
+[data-reduced-motion="true"] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+}
+

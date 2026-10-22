@@ -1,0 +1,20 @@
+# ==============================================================================
+# StudySync AI — Litestream Configuration for Cloudflare R2
+#
+# Free Cloudflare R2 Object Storage:
+# - 10GB persistent storage free forever
+# - $0 egress fees
+# - Replicates SQLite WAL commits in real-time
+# ==============================================================================
+
+dbs:
+  - path: "${DATABASE_PATH:-/data/studysync.db}"
+    replicas:
+      - type: s3
+        bucket: "${R2_BUCKET}"
+        path: "studysync-db"
+        endpoint: "https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
+        region: "auto"
+        access-key-id: "${R2_ACCESS_KEY_ID}"
+        secret-access-key: "${R2_SECRET_ACCESS_KEY}"
+        sync-interval: 1s

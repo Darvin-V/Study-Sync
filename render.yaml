@@ -1,0 +1,42 @@
+# ==============================================================================
+# StudySync AI — Render Blueprint Configuration
+#
+# Free Tier Docker Web Service with Litestream & Cloudflare R2 Persistence
+# ==============================================================================
+
+services:
+  - type: web
+    name: studysync-ai
+    env: docker
+    plan: free
+    region: oregon
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: HOST
+        value: 0.0.0.0
+      - key: SERVE_STATIC
+        value: "true"
+      - key: DATABASE_PATH
+        value: /data/studysync.db
+      - key: CORS_ORIGIN
+        generateValue: true
+      # Zero-Cost Email OTP (Resend Free Tier: 3,000 emails/month)
+      - key: RESEND_API_KEY
+        sync: false
+      - key: RESEND_FROM_EMAIL
+        value: StudySync AI <onboarding@resend.dev>
+      # Zero-Cost SQLite Persistence (Cloudflare R2 Free 10GB Bucket)
+      - key: R2_ACCOUNT_ID
+        sync: false
+      - key: R2_ACCESS_KEY_ID
+        sync: false
+      - key: R2_SECRET_ACCESS_KEY
+        sync: false
+      - key: R2_BUCKET
+        value: studysync-data

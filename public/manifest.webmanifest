@@ -1,0 +1,70 @@
+{
+  "name": "StudySync AI — Intelligent Peer-Learning Platform",
+  "short_name": "StudySync",
+  "description": "Intelligent social peer-learning platform with collaborative study rooms, direct messaging, and personalized recommendations.",
+  "id": "/?source=pwa",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "theme_color": "#863bff",
+  "background_color": "#0e0d15",
+  "lang": "en",
+  "categories": ["education", "social", "productivity"],
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/maskable-icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Study Rooms",
+      "short_name": "Rooms",
+      "description": "Collaborative peer learning rooms",
+      "url": "/rooms?source=shortcut",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Direct Messages",
+      "short_name": "Messages",
+      "description": "Secure one-on-one study chat",
+      "url": "/messages?source=shortcut",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Study Sessions",
+      "short_name": "Sessions",
+      "description": "Focus and collaborative study sessions",
+      "url": "/sessions?source=shortcut",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Discover Peers",
+      "short_name": "Discover",
+      "description": "Find compatible study partners",
+      "url": "/discover?source=shortcut",
+      "icons": [{ "src": "/icons/icon-192x192.png", "sizes": "192x192" }]
+    }
+  ]
+}

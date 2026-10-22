@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">StudySync AI</string>
+    <string name="title_activity_main">StudySync AI</string>
+    <string name="package_name">ai.studysync.app</string>
+    <string name="custom_url_scheme">ai.studysync.app</string>
+</resources>
