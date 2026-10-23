@@ -27,7 +27,7 @@ graph TD
         SQLite[(Native SQLite Database Sync)]
         WAL[Write-Ahead Log]
         Litestream[Litestream Backup Daemon]
-        R2[(Cloudflare R2 Bucket)]
+        B2[(Backblaze B2 Bucket)]
     end
 
     Web -->|HTTP / Credentials| Proxy
@@ -131,5 +131,5 @@ graph TD
   - Serves both API routes (`/api/*`) and compiled static assets (`dist/`) from a single port (`3001` or container `PORT`), eliminating cross-origin CORS overhead in production.
 - **Continuous Zero-Cost Persistence**:
   - Integrates `litestream` daemon alongside Node.js.
-  - Replicates SQLite WAL frames in real time to any S3-compatible zero-cost storage (e.g., Cloudflare R2's 10GB free tier).
+  - Replicates SQLite WAL frames in real time to any S3-compatible zero-cost storage (e.g., Backblaze B2's 10GB free tier, no credit card required).
   - On fresh container startup, Litestream automatically restores the latest database snapshot if the local disk volume is empty.

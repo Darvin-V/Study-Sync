@@ -1,7 +1,7 @@
 # ==============================================================================
 # StudySync AI — Render Blueprint Configuration
 #
-# Free Tier Docker Web Service with Litestream & Cloudflare R2 Persistence
+# Free Tier Docker Web Service with Litestream & Backblaze B2 Persistence
 # ==============================================================================
 
 services:
@@ -25,18 +25,20 @@ services:
       - key: DATABASE_PATH
         value: /data/studysync.db
       - key: CORS_ORIGIN
-        generateValue: true
+        value: https://studysync-ai.onrender.com
       # Zero-Cost Email OTP (Resend Free Tier: 3,000 emails/month)
       - key: RESEND_API_KEY
         sync: false
       - key: RESEND_FROM_EMAIL
         value: StudySync AI <onboarding@resend.dev>
-      # Zero-Cost SQLite Persistence (Cloudflare R2 Free 10GB Bucket)
-      - key: R2_ACCOUNT_ID
+      # Zero-Cost SQLite Persistence (Backblaze B2 Free 10GB Bucket)
+      - key: B2_BUCKET
+        value: StudySync
+      - key: B2_KEY_ID
         sync: false
-      - key: R2_ACCESS_KEY_ID
+      - key: B2_APPLICATION_KEY
         sync: false
-      - key: R2_SECRET_ACCESS_KEY
-        sync: false
-      - key: R2_BUCKET
-        value: studysync-data
+      - key: B2_ENDPOINT
+        value: https://s3.us-east-005.backblazeb2.com
+      - key: B2_REGION
+        value: us-east-005

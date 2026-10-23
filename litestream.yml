@@ -1,20 +1,23 @@
 # ==============================================================================
-# StudySync AI — Litestream Configuration for Cloudflare R2
+# StudySync AI — Litestream Configuration for Backblaze B2
 #
-# Free Cloudflare R2 Object Storage:
+# Free Backblaze B2 Object Storage (S3-Compatible):
 # - 10GB persistent storage free forever
-# - $0 egress fees
+# - No credit card required
 # - Replicates SQLite WAL commits in real-time
 # ==============================================================================
 
 dbs:
-  - path: "${DATABASE_PATH:-/data/studysync.db}"
+  - path: "${DATABASE_PATH}"
     replicas:
       - type: s3
-        bucket: "${R2_BUCKET}"
+        bucket: "${B2_BUCKET}"
         path: "studysync-db"
-        endpoint: "https://${R2_ACCOUNT_ID}.r2.cloudflarestorage.com"
-        region: "auto"
-        access-key-id: "${R2_ACCESS_KEY_ID}"
-        secret-access-key: "${R2_SECRET_ACCESS_KEY}"
+        endpoint: "${B2_ENDPOINT}"
+        region: "${B2_REGION}"
+        access-key-id: "${B2_KEY_ID}"
+        secret-access-key: "${B2_APPLICATION_KEY}"
+        force-path-style: true
         sync-interval: 1s
+
+

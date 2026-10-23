@@ -3,7 +3,7 @@
 #
 # Target: Node.js 22+ (Required for native node:sqlite DatabaseSync)
 # Architectures: linux/amd64
-# Includes: Litestream continuous replication for zero-cost Cloudflare R2 persistence
+# Includes: Litestream continuous replication for zero-cost Backblaze B2 persistence
 # ==============================================================================
 
 # Stage 1: Build the Frontend Static Assets
@@ -37,6 +37,11 @@ ENV HOST=0.0.0.0
 ENV PORT=3001
 ENV DATABASE_PATH=/data/studysync.db
 ENV SERVE_STATIC=true
+ENV B2_BUCKET=StudySync
+ENV B2_ENDPOINT=https://s3.us-east-005.backblazeb2.com
+ENV B2_REGION=us-east-005
+
+
 
 # Create persistent data volume mount point
 RUN mkdir -p /data && chown -R node:node /data

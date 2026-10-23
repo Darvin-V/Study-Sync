@@ -8,12 +8,12 @@ To maintain transparency, this document details the current technical boundaries
 
 ### 1.1 Service Sleep & Cold Start (Render / Fly.io Free Tiers)
 - **Constraint**: On zero-cost hosting tiers (e.g., Render Free Web Service), container instances automatically spin down after 15 minutes of inactivity.
-- **Observed Behavior**: The first incoming HTTP request to a sleeping container experiences a 40–60 second cold-start delay while the container boots and Litestream checks R2 snapshot health.
+- **Observed Behavior**: The first incoming HTTP request to a sleeping container experiences a 40–60 second cold-start delay while the container boots and Litestream checks Backblaze B2 snapshot health.
 - **Mitigation**: A health-check warming cron (e.g., pinging `/health` every 10 minutes) can reduce sleep frequency, but production institutional deployments require a paid instance (~$7/month).
 
 ### 1.2 Ephemeral Disk & Litestream Replication Lag
 - **Constraint**: Cloud free tiers offer ephemeral filesystems that discard local disk files upon container restarts.
-- **Implementation**: StudySync AI integrates `litestream` to replicate SQLite WAL frames to Cloudflare R2 object storage.
+- **Implementation**: StudySync AI integrates `litestream` to replicate SQLite WAL frames to Backblaze B2 object storage.
 - **Limitation**: If an unexpected container termination occurs during an active transaction before a WAL frame flush (typically $< 1$ second window), the un-flushed transaction may be lost upon subsequent container restoration.
 
 ### 1.3 Outbound Email Quotas (Email OTP)
